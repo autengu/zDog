@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cruisin</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet" href="index.css">
+
+    <script type="text/javascript">
+
+        function leftArrowPressed() {
+            var element = document.getElementById("carId");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+
+        function rightArrowPressed() {
+            var element = document.getElementById("carId");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+
+        function upArrowPressed() {
+            var element = document.getElementById("carId");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+
+        function downArrowPressed() {
+            var element = document.getElementById("carId");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+
+        function moveSelection(ev) {
+            switch (ev.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+            }
+            ev.preventDefault();
+        };
+
+        function docReady() {
+            window.addEventListener('keydown', moveSelection);
+        }
+    </script>
+</head>
+
+<body onload="docReady()" onkeydown="" onkeyup="">
+    <div class="main">
+        <div>
+            <canvas id="carId" class="car" style="position:absolute;left:0; top:0;" width="140px"
+                height="140px"></canvas>
+        </div>
+        <div style="border: 1px solid blueviolet; height: 80px; width: 80px;"></div>
+    </div>
+
+    <script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+    <script src="dogo.js"></script>
+</body>
+
+</html>

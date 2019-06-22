@@ -1,0 +1,17 @@
+body { 
+    /* background: lightblue url("europe_empty.png") no-repeat; 
+    height: 2396px;
+    width: 2946px; */
+  }
+
+div.main {
+  display: flex;
+  
+}
+
+canvas.car {
+    position: relative;
+    /* left: 0px;
+    top: 0px; */
+    /* border: 3px solid #73AD21; */
+}
